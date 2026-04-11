@@ -1,0 +1,4 @@
+assignmentId,title,courseId,teacherId,dueDate,maxMarks
+A001,Linked List Implementation,C101,4,2024-02-10,20
+A002,Binary Trees,C101,4,2024-02-25,20
+A003,Logic Gates Design,C102,5,2024-02-15,15

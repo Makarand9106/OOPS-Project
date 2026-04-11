@@ -1,0 +1,8 @@
+id,name,role,department
+1,Rahul Sharma,STUDENT,Computer Engineering
+2,Priya Patel,STUDENT,Electronics Engineering
+3,Amit Desai,STUDENT,Mechanical Engineering
+4,Dr. Sunita Kulkarni,TEACHER,Computer Engineering
+5,Prof. Rajan Mehta,TEACHER,Electronics Engineering
+6,Admin User,ADMIN,Administration
+7,Exam Cell Officer,EXAM_CELL,Examination

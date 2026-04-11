@@ -1,0 +1,3 @@
+submissionId,assignmentId,studentId,submissionDate,marksObtained,graded
+S001,A001,1,2024-02-08,18,true
+S002,A003,2,2024-02-13,12,true
