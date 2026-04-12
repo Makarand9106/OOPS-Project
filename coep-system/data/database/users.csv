@@ -1,15 +1,14 @@
 id,name,role,department,password
-1,Jaivardhan Malhotra,STUDENT,Computer Engineering,123345
+1,Jaivardhan Malhotra,STUDENT,Computer Engineering,12345
 2,Parth Malangave,STUDENT,Electronics Engineering,123345
 3,Kaivalya Katdare,STUDENT,Computer Engineering,123345
 4,Makarand Kulkarni,STUDENT,Computer Engineering,123345
-5,Siddhesh Honde,STUDENT,Electrical Engineering,123345 
+5,Siddhesh Honde,STUDENT,Electrical Engineering,123345
 6,Ananya Joshi,STUDENT,Civil Engineering,123345
 7,Rohit Patil,STUDENT,Mechanical Engineering,123345
 8,Neha Verma,STUDENT,Electronics Engineering,123345
 9,Kunal Shah,STUDENT,Mechanical Engineering,123345
 10,Simran Kaur,STUDENT,Electrical Engineering,123345
-
 11,Arjun Mehta,STUDENT,Civil Engineering,123345
 12,Sneha Iyer,STUDENT,Computer Engineering,123345
 13,Varun Gupta,STUDENT,Mechanical Engineering,123345
@@ -20,28 +19,22 @@ id,name,role,department,password
 18,Kavya Reddy,STUDENT,Electronics Engineering,123345
 19,Harsh Jain,STUDENT,Mechanical Engineering,123345
 20,Meera Das,STUDENT,Electrical Engineering,123345
-
 21,Dr. Sunita Kulkarni,TEACHER,Computer Engineering,Teacher@coep
 22,Dr. Rajesh Patil,TEACHER,Computer Engineering,Teacher@coep
 23,Prof. Neel Shah,TEACHER,Computer Engineering,Teacher@coep
-
 24,Dr. Mehta,TEACHER,Electronics Engineering,Teacher@coep
 25,Prof. Rao,TEACHER,Electronics Engineering,Teacher@coep
 26,Dr. Iyer,TEACHER,Electronics Engineering,Teacher@coep
-
 27,Dr. Deshmukh,TEACHER,Mechanical Engineering,Teacher@coep
 28,Prof. Kuldeep Singh,TEACHER,Mechanical Engineering,Teacher@coep
 29,Dr. Fernandes,TEACHER,Mechanical Engineering,Teacher@coep
-
 30,Dr. Sharma,TEACHER,Electrical Engineering,Teacher@coep
 31,Prof. Verma,TEACHER,Electrical Engineering,Teacher@coep
 32,Dr. Gupta,TEACHER,Electrical Engineering,Teacher@coep
-
 33,Dr. Joshi,TEACHER,Civil Engineering,Teacher@coep
 34,Prof. Patwardhan,TEACHER,Civil Engineering,Teacher@coep
 35,Dr. Naik,TEACHER,Civil Engineering,Teacher@coep
-
 36,Admin User,ADMIN,Administration,Admin@coeptech
-
 37,Exam Officer 1,EXAM_CELL,Examination,123456789
 38,Exam Officer 2,EXAM_CELL,Examination,123456789
+39,Krushn Gandhi,STUDENT,CSE,student@coep

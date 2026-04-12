@@ -119,25 +119,56 @@ public class UserService {
     }
 
     public User login(int id, String password) {
-    User user = userMap.get(id);
+        User user = userMap.get(id);
 
-    if (user == null) {
-        System.out.println("  User not found.");
-        return null;
+        if (user == null) {
+            System.out.println("  User not found.");
+            return null;
+        }
+
+        if (!user.getPassword().equals(password)) {
+            System.out.println("  Incorrect password.");
+            return null;
+        }
+
+        return user;
     }
 
-    if (!user.getPassword().equals(password)) {
-        System.out.println("  Incorrect password.");
-        return null;
+    /**
+     * Changes the password for a user after verifying the current password.
+     * Persists the change to CSV immediately.
+     *
+     * @param userId          ID of the user
+     * @param currentPassword Current password to verify identity
+     * @param newPassword     New password to set
+     * @return true if changed successfully, false otherwise
+     */
+    public boolean changePassword(int userId, String currentPassword, String newPassword) {
+        User user = userMap.get(userId);
+        if (user == null) {
+            System.out.println("  [!] User not found.");
+            return false;
+        }
+        if (!user.getPassword().equals(currentPassword)) {
+            System.out.println("  [!] Incorrect current password.");
+            return false;
+        }
+        if (newPassword == null || newPassword.trim().isEmpty()) {
+            System.out.println("  [!] New password cannot be empty.");
+            return false;
+        }
+        if (newPassword.equals(currentPassword)) {
+            System.out.println("  [!] New password must be different from the current password.");
+            return false;
+        }
+        user.setPassword(newPassword);
+        saveToCSV();
+        System.out.println("  [✓] Password changed successfully. You will be logged out.");
+        return true;
     }
-
-    return user;
-}
 
     public void printAllUsers() {
         System.out.println("\n  All Users \n");
-
-        // if (userMap.isEmpty()) { System.out.println("  No users found."); return; }
 
         System.out.printf("  %-5s %-25s %-12s %-25s%n", "ID", "Name", "Role", "Department");
         System.out.println("--------------------------------------------------------------------");    
@@ -146,5 +177,14 @@ public class UserService {
             System.out.printf("  %-5d %-25s %-12s %-25s%n",
                 u.getId(), u.getName(), u.getRole(), u.getDepartment());
         }
+    }
+
+    /**
+     * Returns all unique departments present in user data, sorted lexicographically.
+     */
+    public List<String> getAllDepartments() {
+        Set<String> depts = new TreeSet<>();
+        for (User u : userMap.values()) depts.add(u.getDepartment());
+        return new ArrayList<>(depts);
     }
 }
