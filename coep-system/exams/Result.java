@@ -39,12 +39,14 @@ public class Result {
 
     public static String calculateGrade(int marks, int max) {
         double pct = (marks * 100.0) / max;
-        if (pct >= 90) return "O";
-        if (pct >= 75) return "A";
-        if (pct >= 60) return "B";
-        if (pct >= 50) return "C";
-        if (pct >= 40) return "D";
-        return "F";
+        if (pct >= 90) return "AA";
+        else if (pct >= 80) return "AB";
+        else if (pct >= 70) return "BB";
+        else if (pct >= 60) return "BC";
+        else if (pct >= 50) return "CC";
+        else if (pct >= 40) return "CD";
+        else if (pct >= 35) return "DD";
+        else return "F";
     }
 
     @Override

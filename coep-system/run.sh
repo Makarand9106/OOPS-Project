@@ -9,11 +9,11 @@ PROJECT_ROOT="$(cd "$(dirname "$0")" && pwd)"
 SRC_DIR="$PROJECT_ROOT"
 OUT_DIR="$PROJECT_ROOT/out"
 
-echo ""
-echo "  +============================================+"
-echo "  |   COEP System - Build & Run              |"
-echo "  +============================================+"
-echo ""
+# echo ""
+# echo "  +============================================+"
+# echo "  |   COEP System - Build & Run              |"
+# echo "  +============================================+"
+# echo ""
 
 # ── Step 1: Find javac ────────────────────────────────────
 JAVAC=$(which javac 2>/dev/null || echo "")
@@ -35,8 +35,8 @@ if [ -z "$JAVAC" ]; then
 fi
 
 JAVA=$(dirname "$JAVAC")/java
-echo "  [OK] Using javac: $JAVAC"
-echo ""
+# echo "  [OK] Using javac: $JAVAC"
+# echo ""
 
 # ── Step 2: Compile ───────────────────────────────────────
 mkdir -p "$OUT_DIR"
@@ -51,11 +51,12 @@ echo "  Compiling Java source files..."
   "$SRC_DIR"/controllers/*.java \
   "$SRC_DIR"/main/*.java
 
-echo "  [OK] Compilation successful!"
-echo ""
+# echo "  [OK] Compilation successful!"
+# echo ""
 
 # ── Step 3: Run ───────────────────────────────────────────
-echo "  Starting COEP System..."
-echo ""
+# echo "  Starting COEP System..."
+# echo ""
+
 cd "$PROJECT_ROOT"
 "$JAVA" -cp "$OUT_DIR" main.Main

@@ -2,11 +2,11 @@ package controllers;
 
 import exams.ExamForm;
 import exams.Result;
+import java.util.*;
 import services.*;
 import users.ExamCellStaff;
+import users.User;
 import utils.InputValidator;
-
-import java.util.List;
 
 /**
  * Controller for Exam Cell Staff role.
@@ -16,14 +16,16 @@ public class ExamCellController {
     private final ExamCellStaff staff;
     private final ExamService examService;
     private final UserService userService;
+    private final CourseService courseService;
     private final NotificationService notificationService;
 
     public ExamCellController(ExamCellStaff staff, ExamService examService,
-                               UserService userService,
+                               UserService userService, CourseService courseService,
                                NotificationService notificationService) {
         this.staff = staff;
         this.examService = examService;
         this.userService = userService;
+        this.courseService = courseService;
         this.notificationService = notificationService;
     }
 
@@ -33,17 +35,17 @@ public class ExamCellController {
             staff.viewDashboard();
             int choice = InputValidator.readInt("\n  Enter choice: ");
             switch (choice) {
-                case 1: viewPendingForms();   break;
-                case 2: approveForm();        break;
-                case 3: generateHallTicket(); break;
-                case 4: uploadMarks();        break;
-                case 5: publishResults();     break;
-                case 6: viewAllResults();     break;
+                case 1: viewPendingForms(); break;
+                case 2: approveForm();      break;
+                case 3: uploadMarks();      break;
+                case 4: publishResults();   break;
+                case 5: viewAllResults();   break;
+                case 6: changePassword();   break;
                 case 0:
                     running = false;
-                    System.out.println("\n  Logged out. Goodbye, " + staff.getName() + "!");
+                    System.out.println("\n  Logged out successfully " + staff.getName() + "!");
                     break;
-                default: System.out.println("  [!] Invalid option.");
+                default: System.out.println("  Invalid option.");
             }
         }
     }
@@ -68,7 +70,7 @@ public class ExamCellController {
         for (ExamForm f : pending) {
             if (f.getFormId().equals(formId)) {
                 examService.approveForm(formId);
-                users.User student = userService.findById(f.getStudentId());
+                User student = userService.findById(f.getStudentId());
                 if (student != null)
                     notificationService.notifyExamFormApproved(student.getName(), f.getCourseId());
                 return;
@@ -77,21 +79,63 @@ public class ExamCellController {
         System.out.println("  [!] Form not found in pending list.");
     }
 
-    private void generateHallTicket() {
-        System.out.println("\n  -- Generate Hall Ticket --");
-        int studentId = InputValidator.readInt("  Enter Student ID: ");
-        users.User student = userService.findById(studentId);
-        if (student == null) { System.out.println("  [!] Student not found."); return; }
-        examService.generateHallTicket(studentId, student.getName());
-    }
-
+    /**
+     * Upload exam marks with two validations:
+     * 1. Student must exist.
+     * 2. Student must be enrolled in the specified course — marks rejected otherwise.
+     * Students are shown sorted by Branch (A→Z) then Student ID before input.
+     */
     private void uploadMarks() {
         System.out.println("\n  -- Upload Exam Marks --");
-        int studentId    = InputValidator.readInt("  Student ID: ");
-        String courseId  = InputValidator.readString("  Course ID: ").toUpperCase();
-        String examType  = InputValidator.readString("  Exam Type (SEMESTER/BACKLOG): ").toUpperCase();
-        int maxMarks     = InputValidator.readInt("  Max Marks: ");
-        int marks        = InputValidator.readInt("  Marks Obtained: ");
+
+        // Display all students sorted by Branch then Student ID
+        List<User> students = userService.getUsersByRole("STUDENT");
+        students.sort(Comparator.comparing(User::getDepartment)
+                                .thenComparingInt(User::getId));
+
+        System.out.println("\n  Student Reference List (sorted by Branch, then ID):");
+        System.out.printf("  %-5s %-25s %-30s%n", "ID", "Name", "Branch");
+        System.out.println("  " + "─".repeat(63));
+
+        String lastDept = "";
+        for (User u : students) {
+            if (!u.getDepartment().equals(lastDept)) {
+                lastDept = u.getDepartment();
+                System.out.println("  -- " + lastDept + " --");
+            }
+            System.out.printf("  %-5d %-25s %-30s%n",
+                    u.getId(), u.getName(), u.getDepartment());
+        }
+        System.out.println();
+
+        int studentId = InputValidator.readInt("  Student ID: ");
+
+        // Validate student exists
+        User student = userService.findById(studentId);
+        if (student == null || !student.getRole().equalsIgnoreCase("STUDENT")) {
+            System.out.println("  [!] Student with ID " + studentId + " not found.");
+            return;
+        }
+        System.out.println("  Student : " + student.getName()
+                + " | Branch: " + student.getDepartment());
+
+        String courseId = InputValidator.readString("  Course ID: ").toUpperCase();
+
+        // ── ENROLLMENT CHECK ─────────────────────────────────────────────────
+        List<String[]> enrollments = courseService.getEnrollmentsByStudent(studentId);
+        boolean enrolled = enrollments.stream()
+                .anyMatch(e -> e[2].equalsIgnoreCase(courseId));
+        if (!enrolled) {
+            System.out.println("  [!] REJECTED: Student '" + student.getName()
+                    + "' (ID: " + studentId + ") is NOT enrolled in course " + courseId + ".");
+            System.out.println("      Marks upload blocked. Enroll the student first.");
+            return;
+        }
+        // ─────────────────────────────────────────────────────────────────────
+
+        String examType = InputValidator.readString("  Exam Type (SEMESTER/BACKLOG): ").toUpperCase();
+        int maxMarks    = InputValidator.readInt("  Max Marks: ");
+        int marks       = InputValidator.readInt("  Marks Obtained: ");
         if (marks < 0 || marks > maxMarks) {
             System.out.println("  [!] Invalid marks. Must be between 0 and " + maxMarks);
             return;
@@ -112,7 +156,7 @@ public class ExamCellController {
                 List<Result> all = examService.getAllResults();
                 for (Result r : all) {
                     if (r.getResultId().equals(rId)) {
-                        users.User student = userService.findById(r.getStudentId());
+                        User student = userService.findById(r.getStudentId());
                         if (student != null)
                             notificationService.notifyResultPublished(
                                     student.getName(), r.getCourseId(), r.getGrade());
@@ -122,7 +166,7 @@ public class ExamCellController {
             }
         } else if (choice == 2) {
             examService.publishAllResults();
-            notificationService.sendAsync("All Students",
+            notificationService.sendInThread("All Students",
                     "Exam results have been published. Please check your portal.");
         }
     }
@@ -139,5 +183,24 @@ public class ExamCellController {
                     r.getResultId(), r.getStudentId(), r.getCourseId(),
                     r.getExamType(), r.getMarksObtained(), r.getMaxMarks(),
                     r.getGrade(), r.isPublished() ? "Yes" : "No");
+    }
+
+    /**
+     * Changes the Exam Cell staff member's own password. Forces logout on success.
+     */
+    private void changePassword() {
+        System.out.println("\n  -- Change Password --");
+        String current = InputValidator.readPassword("  Current Password: ");
+        String newPass = InputValidator.readPassword("  New Password: ");
+        String confirm = InputValidator.readPassword("  Confirm New Password: ");
+        if (!newPass.equals(confirm)) {
+            System.out.println("  [!] Passwords do not match. Cancelled.");
+            return;
+        }
+        boolean ok = userService.changePassword(staff.getId(), current, newPass);
+        if (ok) {
+            System.out.println("  Session will now end for security.");
+            throw new RuntimeException("PASSWORD_CHANGED");
+        }
     }
 }

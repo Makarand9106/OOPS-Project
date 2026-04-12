@@ -6,20 +6,20 @@ package users;
  */
 public abstract class User {
 
-    // Encapsulated fields
     private int id;
     private String name;
     private String role;
     private String department;
+    private String password;
 
-    public User(int id, String name, String role, String department) {
+    public User(int id, String name, String role, String department, String password) {
         this.id = id;
         this.name = name;
         this.role = role;
         this.department = department;
+        this.password = password;
     }
 
-    // Getters and Setters (Encapsulation)
     public int getId()               { return id; }
     public void setId(int id)        { this.id = id; }
 
@@ -32,21 +32,20 @@ public abstract class User {
     public String getDepartment()              { return department; }
     public void setDepartment(String dep)      { this.department = dep; }
 
-    /**
-     * Abstract method – each subclass must override (Polymorphism).
-     */
+    public String getPassword()              { return password; }
+    public void setPassword(String password)      { this.password = password; }
+
+
     public abstract void viewDashboard();
 
-    /**
-     * Common display header used by all roles.
-     */
+
     protected void printHeader(String title) {
         System.out.println("\n╔══════════════════════════════════════════╗");
         System.out.printf( "║  %-40s║%n", title);
         System.out.println("╠══════════════════════════════════════════╣");
-        System.out.printf( "║  User : %-32s║%n", name);
-        System.out.printf( "║  Role : %-32s║%n", role);
-        System.out.printf( "║  Dept : %-32s║%n", department);
+        System.out.printf( "║  User : %-32s ║%n", name);
+        System.out.printf( "║  Role : %-32s ║%n", role);
+        System.out.printf( "║  Dept : %-32s ║%n", department);
         System.out.println("╚══════════════════════════════════════════╝");
     }
 

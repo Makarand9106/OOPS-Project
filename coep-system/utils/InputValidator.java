@@ -37,6 +37,19 @@ public class InputValidator {
         }
     }
 
+    public static String readPassword(String prompt) {
+    java.io.Console console = System.console();
+
+    if (console != null) {
+        char[] passwordChars = console.readPassword(prompt);
+        return new String(passwordChars);
+    } else {
+        // fallback (IDE like IntelliJ doesn't support Console)
+        System.out.print(prompt);
+        return new java.util.Scanner(System.in).nextLine();
+    }
+}
+
     public static Scanner getScanner() {
         return scanner;
     }

@@ -1,23 +1,28 @@
 package services;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Notification service demonstrating Concurrent Programming.
- * Uses ExecutorService to send notifications asynchronously.
+ * Uses explicit Thread objects to send notifications concurrently.
  */
+
 public class NotificationService {
 
-    // Thread pool with 3 threads for concurrent notifications
-    private final ExecutorService executor = Executors.newFixedThreadPool(3);
+    // List to track active notification threads
+    private final List<Thread> notificationThreads = new ArrayList<>();
+    // Lock for thread-safe operations
+    private final Object threadLock = new Object();
 
     /**
-     * Sends an async notification (simulates email/SMS).
-     * Runs in a separate thread — caller is NOT blocked.
+     * Sends a notification in a separate thread (caller is NOT blocked).
+     * Demonstrates explicit multithreading for concurrent notification delivery.
      */
-    public void sendAsync(String recipientName, String message) {
-        executor.submit(() -> {
+    
+    public void sendInThread(String recipientName, String message) {
+        // Create notification thread
+        Thread notificationThread = new Thread(() -> {
             try {
                 // Simulate network delay (real system would call email/SMS API here)
                 Thread.sleep(300);
@@ -26,43 +31,67 @@ public class NotificationService {
                 Thread.currentThread().interrupt();
             }
         });
+        
+        // Set thread name for debugging
+        notificationThread.setName("NotificationThread-" + recipientName);
+        
+        // Register thread for tracking
+        synchronized (threadLock) {
+            notificationThreads.add(notificationThread);
+        }
+        
+        // Start the notification thread (runs concurrently)
+        notificationThread.start();
     }
 
     /**
-     * Notify multiple users in parallel using threads.
+     * Notify multiple users in parallel using separate threads.
+     * Each recipient gets their own notification thread.
      */
-    public void broadcastAsync(String[] recipients, String message) {
+    public void broadcastInThreads(String[] recipients, String message) {
         for (String recipient : recipients) {
-            sendAsync(recipient, message);
+            sendInThread(recipient, message);
         }
     }
 
     /**
-     * Gracefully shuts down the thread pool.
+     * Gracefully waits for all active notification threads to complete.
      * Call this when the application exits.
      */
     public void shutdown() {
-        executor.shutdown();
+        synchronized (threadLock) {
+            for (Thread thread : notificationThreads) {
+                try {
+                    if (thread.isAlive()) {
+                        thread.join(); // Wait for thread to complete
+                    }
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            }
+            notificationThreads.clear();
+        }
+        System.out.println("  [INFO] All notification threads completed and shut down.");
     }
 
     // ── Convenience helpers ──────────────────────────────────────────────────
 
     public void notifyGraded(String studentName, String assignmentTitle, int marks) {
-        sendAsync(studentName,
+        sendInThread(studentName,
             "Your assignment '" + assignmentTitle + "' has been graded. Marks: " + marks);
     }
 
     public void notifyResultPublished(String studentName, String courseId, String grade) {
-        sendAsync(studentName,
+        sendInThread(studentName,
             "Result published for course " + courseId + ". Your grade: " + grade);
     }
 
     public void notifyExamFormApproved(String studentName, String courseId) {
-        sendAsync(studentName,
+        sendInThread(studentName,
             "Your exam form for course " + courseId + " has been APPROVED!");
     }
 
     public void notifyEnrollment(String studentName, String courseId) {
-        sendAsync(studentName, "You have successfully enrolled in course: " + courseId);
+        sendInThread(studentName, "You have successfully enrolled in course: " + courseId);
     }
 }

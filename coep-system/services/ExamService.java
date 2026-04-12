@@ -147,6 +147,12 @@ public class ExamService {
     public boolean publishResult(String resultId) {
         for (Result r : results) {
             if (r.getResultId().equals(resultId)) {
+                // Prevent duplicate publication
+                if (r.isPublished()) {
+                    System.out.println("  [!] Result " + resultId
+                            + " is ALREADY published. Cannot publish again.");
+                    return false;
+                }
                 r.setPublished(true);
                 saveResults();
                 System.out.println("  [+] Result " + resultId + " published.");
