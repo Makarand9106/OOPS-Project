@@ -1,14 +1,14 @@
 package controllers;
 
+import java.util.*;
 import services.*;
 import users.*;
 import utils.InputValidator;
 
-import java.util.*;
-
 /**
  * Controller for Admin role. Handles user management and course oversight.
  */
+
 public class AdminController {
 
     private final Admin admin;
@@ -33,25 +33,31 @@ public class AdminController {
                 case 4: manageCourses();         break;
                 case 5: departmentSummary();     break;
                 case 0: running = false;
-                        System.out.println("\n  Logged out. Goodbye, " + admin.getName() + "!");
+                        System.out.println("\n  Logged out successfully " + admin.getName() + "!");
                         break;
-                default: System.out.println("  [!] Invalid option.");
+                default: System.out.println("  Invalid option.");
             }
         }
     }
 
     private void addUser() {
         System.out.println("\n  -- Add New User --");
-        String name = InputValidator.readString("  Full Name: ");
+
+        String name = InputValidator.readString("  Name: ");
+
         System.out.println("  Roles: STUDENT | TEACHER | ADMIN | EXAM_CELL");
+
         String role = InputValidator.readString("  Role: ").toUpperCase();
         String dept = InputValidator.readString("  Department: ");
-        userService.addUser(name, role, dept);
+        String password = InputValidator.readString("  Set Password: ");
+        userService.addUser(name, role, dept, password);
     }
 
-    private void removeUser() {
+    private void removeUser(){
         System.out.println("\n  -- Remove User --");
         userService.printAllUsers();
+        System.out.println();
+
         int id = InputValidator.readInt("  Enter User ID to remove: ");
         String confirm = InputValidator.readString("  Confirm removal of user " + id + "? (yes/no): ");
         if ("yes".equalsIgnoreCase(confirm)) {
@@ -76,31 +82,49 @@ public class AdminController {
             courseService.printAllCourses();
             String cid = InputValidator.readString("  Enter Course ID to remove: ").toUpperCase();
             boolean ok = courseService.removeCourse(cid);
-            System.out.println(ok ? "  [+] Course removed." : "  [!] Course not found.");
+            System.out.println(ok ? "  Course removed." : "  [!] Course not found.");
         }
     }
 
     private void departmentSummary() {
-        System.out.println("\n  -- Department Summary --");
-        List<User> all = userService.getAllUsers();
-        Map<String, Integer> deptCount = new LinkedHashMap<>();
-        for (User u : all) {
-            deptCount.merge(u.getDepartment(), 1, Integer::sum);
+    System.out.println("\n  -- Department Summary --");
+
+    List<User> all = userService.getAllUsers();
+    Map<String, Integer> deptCount = new HashMap<>();
+
+    for (User u : all) {
+        String dept = u.getDepartment();
+        if (deptCount.containsKey(dept)) {
+            deptCount.put(dept, deptCount.get(dept) + 1);
+        } else {
+            deptCount.put(dept, 1);
         }
-        System.out.printf("  %-30s %-10s%n", "Department", "Users");
-        System.out.println("  " + "-".repeat(42));
-        for (Map.Entry<String, Integer> e : deptCount.entrySet()) {
-            System.out.printf("  %-30s %-10d%n", e.getKey(), e.getValue());
-        }
-        System.out.println("\n  Role breakdown:");
-        List<User> students  = userService.getUsersByRole("STUDENT");
-        List<User> teachers  = userService.getUsersByRole("TEACHER");
-        List<User> admins    = userService.getUsersByRole("ADMIN");
-        List<User> examCells = userService.getUsersByRole("EXAM_CELL");
-        System.out.println("    Students   : " + students.size());
-        System.out.println("    Teachers   : " + teachers.size());
-        System.out.println("    Admins     : " + admins.size());
-        System.out.println("    Exam Cell  : " + examCells.size());
-        System.out.println("    Total Users: " + all.size());
     }
+
+    System.out.printf("  %-30s %-10s%n", "Department", "Users");
+    System.out.println("  ------------------------------------------");
+
+    for (String dept : deptCount.keySet()) {
+        System.out.printf("  %-30s %-10d%n", dept, deptCount.get(dept));
+    }
+
+    // Role count
+    int students = 0, teachers = 0, admins = 0, examCells = 0;
+
+    for (User u : all) {
+        String role = u.getRole();
+        if (role.equalsIgnoreCase("STUDENT")) students++;
+        else if (role.equalsIgnoreCase("TEACHER")) teachers++;
+        else if (role.equalsIgnoreCase("ADMIN")) admins++;
+        else if (role.equalsIgnoreCase("EXAM_CELL")) examCells++;
+    }
+
+    System.out.println("\n  Role breakdown:");
+    System.out.println("    Students   : " + students);
+    System.out.println("    Teachers   : " + teachers);
+    System.out.println("    Admins     : " + admins);
+    System.out.println("    Exam Cell  : " + examCells);
+    System.out.println("    Total Users: " + all.size());
+}
+    
 }

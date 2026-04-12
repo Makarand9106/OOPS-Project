@@ -1,2 +1,1 @@
 resultId,studentId,courseId,examType,marksObtained,maxMarks,grade,published
-R001,1,C101,SEMESTER,78,100,A,true

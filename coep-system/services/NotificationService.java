@@ -7,6 +7,7 @@ import java.util.concurrent.Executors;
  * Notification service demonstrating Concurrent Programming.
  * Uses ExecutorService to send notifications asynchronously.
  */
+
 public class NotificationService {
 
     // Thread pool with 3 threads for concurrent notifications
@@ -16,6 +17,7 @@ public class NotificationService {
      * Sends an async notification (simulates email/SMS).
      * Runs in a separate thread — caller is NOT blocked.
      */
+    
     public void sendAsync(String recipientName, String message) {
         executor.submit(() -> {
             try {

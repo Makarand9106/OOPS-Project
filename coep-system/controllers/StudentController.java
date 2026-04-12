@@ -1,17 +1,16 @@
 package controllers;
 
-import courses.Assignment;
-import courses.Submission;
+import courses.*;
 import exams.Result;
+import java.util.List;
 import services.*;
 import users.Student;
 import utils.InputValidator;
 
-import java.util.List;
-
 /**
  * Controller for Student role. Handles all student menu interactions.
  */
+
 public class StudentController {
 
     private final Student student;
@@ -43,9 +42,9 @@ public class StudentController {
                 case 5: viewEnrollments();  break;
                 case 0:
                     running = false;
-                    System.out.println("\n  Logged out. Goodbye, " + student.getName() + "!");
+                    System.out.println("\n  Logged out successfully " + student.getName() + "!");
                     break;
-                default: System.out.println("  [!] Invalid option.");
+                default: System.out.println("  Invalid option.");
             }
         }
     }

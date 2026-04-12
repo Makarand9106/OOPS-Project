@@ -1,12 +1,9 @@
 package users;
 
-/**
- * Represents an Admin user. Inherits from User (Inheritance OOP principle).
- */
 public class Admin extends User {
 
-    public Admin(int id, String name, String department) {
-        super(id, name, "ADMIN", department);
+    public Admin(int id, String name, String department, String password) {
+        super(id, name, "ADMIN", department, password);
     }
 
     @Override

@@ -5,8 +5,8 @@ package users;
  */
 public class Teacher extends User {
 
-    public Teacher(int id, String name, String department) {
-        super(id, name, "TEACHER", department);
+    public Teacher(int id, String name, String department, String password) {
+        super(id, name, "TEACHER", department, password);
     }
 
     @Override
@@ -18,7 +18,7 @@ public class Teacher extends User {
         System.out.println("  3. Create Assignment");
         System.out.println("  4. Grade Assignment Submissions");
         System.out.println("  5. Create Quiz (In-Memory)");
-        System.out.println("  6. View My Courses");
+        System.out.println("  6. View Courses");
         System.out.println("  0. Logout");
     }
 }

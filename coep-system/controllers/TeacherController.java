@@ -1,12 +1,10 @@
 package controllers;
 
-import courses.Assignment;
 import courses.Submission;
+import java.util.*;
 import services.*;
 import users.Teacher;
 import utils.InputValidator;
-
-import java.util.*;
 
 /**
  * Controller for Teacher role. Handles all teacher menu interactions.
@@ -40,9 +38,9 @@ public class TeacherController {
                 case 5: createQuiz();            break;
                 case 6: viewMyCourses();         break;
                 case 0: running = false;
-                        System.out.println("\n  Logged out. Goodbye, " + teacher.getName() + "!");
+                        System.out.println("\n  Logged out successfully " + teacher.getName() + "!");
                         break;
-                default: System.out.println("  [!] Invalid option.");
+                default: System.out.println("  Invalid option.");
             }
         }
     }

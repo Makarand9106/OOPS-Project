@@ -1,4 +1,24 @@
 courseId,courseName,teacherId,department,credits
+
 C101,Data Structures and Algorithms,4,Computer Engineering,4
-C102,Digital Electronics,5,Electronics Engineering,3
-C103,Engineering Mathematics,4,Computer Engineering,4
+C102,Object Oriented Programming and Design,4,Computer Engineering,4
+C103,Operating Systems,4,Computer Engineering,3
+C104,Database Management Systems,4,Computer Engineering,3
+C105,Computer Networks,4,Computer Engineering,4
+
+E201,Analog Circuits,4,Electronics Engineering,4
+E202,Microprocessors,4,Electronics Engineering,3
+E203,Communication Systems,4,Electronics Engineering3
+C204,Digital Electronics,5,Electronics Engineering,4
+
+M301,Thermodynamics,4,Mechanical Engineering,4
+M302,Fluid Mechanics,4,Mechanical Engineering,4
+M303,Machine Design,4,Mechanical Engineering,3
+
+EE401,Electrical Machines,4,Electrical Engineering,4
+EE402,Power Systems,4,Electrical Engineering,3
+EE403,Control Systems,4,Electrical Engineering,3
+
+CE501,Structural Engineering,4,Civil Engineering,3
+CE502,Geotechnical Engineering,4,Civil Engineering,4
+CE503,Transportation Engineering,4,Civil Engineering,3

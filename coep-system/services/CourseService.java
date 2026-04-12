@@ -1,9 +1,8 @@
 package services;
 
 import courses.Course;
-import utils.CSVHandler;
-
 import java.util.*;
+import utils.CSVHandler;
 
 /**
  * Service for managing courses. Demonstrates Generics with List<Course>.
@@ -66,13 +65,13 @@ public class CourseService {
     public boolean addCourse(String courseId, String name, int teacherId, String dept, int credits) {
         for (Course c : courses) {
             if (c.getCourseId().equalsIgnoreCase(courseId)) {
-                System.out.println("  [!] Course ID already exists.");
+                System.out.println("  Course ID already exists.");
                 return false;
             }
         }
         courses.add(new Course(courseId, name, teacherId, dept, credits));
         saveToCSV();
-        System.out.println("  [+] Course created: " + courseId);
+        System.out.println("  Course created: " + courseId);
         return true;
     }
 
@@ -124,4 +123,5 @@ public class CourseService {
                 c.getCourseId(), c.getCourseName(), c.getDepartment(), c.getCredits());
         }
     }
+
 }

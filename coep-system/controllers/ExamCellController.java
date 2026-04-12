@@ -2,11 +2,10 @@ package controllers;
 
 import exams.ExamForm;
 import exams.Result;
+import java.util.List;
 import services.*;
 import users.ExamCellStaff;
 import utils.InputValidator;
-
-import java.util.List;
 
 /**
  * Controller for Exam Cell Staff role.
@@ -35,15 +34,14 @@ public class ExamCellController {
             switch (choice) {
                 case 1: viewPendingForms();   break;
                 case 2: approveForm();        break;
-                case 3: generateHallTicket(); break;
-                case 4: uploadMarks();        break;
-                case 5: publishResults();     break;
-                case 6: viewAllResults();     break;
+                case 3: uploadMarks();        break;
+                case 4: publishResults();     break;
+                case 5: viewAllResults();     break;
                 case 0:
                     running = false;
-                    System.out.println("\n  Logged out. Goodbye, " + staff.getName() + "!");
+                    System.out.println("\n  Logged out successfully " + staff.getName() + "!");
                     break;
-                default: System.out.println("  [!] Invalid option.");
+                default: System.out.println("  Invalid option.");
             }
         }
     }
@@ -75,14 +73,6 @@ public class ExamCellController {
             }
         }
         System.out.println("  [!] Form not found in pending list.");
-    }
-
-    private void generateHallTicket() {
-        System.out.println("\n  -- Generate Hall Ticket --");
-        int studentId = InputValidator.readInt("  Enter Student ID: ");
-        users.User student = userService.findById(studentId);
-        if (student == null) { System.out.println("  [!] Student not found."); return; }
-        examService.generateHallTicket(studentId, student.getName());
     }
 
     private void uploadMarks() {

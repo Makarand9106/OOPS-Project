@@ -5,8 +5,8 @@ package users;
  */
 public class Student extends User {
 
-    public Student(int id, String name, String department) {
-        super(id, name, "STUDENT", department);
+    public Student(int id, String name, String department, String password) {
+        super(id, name, "STUDENT", department, password);
     }
 
     /**
