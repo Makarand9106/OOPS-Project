@@ -65,16 +65,16 @@ public class Main {
     // ── Login Flow ───────────────────────────────────────────────────────────
 
    private static void loginAs(String role) {
-    System.out.println("\n  Login as " + role + "\t\t");
-    System.out.println("  Available " + role + " accounts:");
+    // System.out.println("\n  Login as " + role + "\t\t");
+    // System.out.println("  Available " + role + " accounts:");
+    // for (User u : userService.getUsersByRole(role)) {
+    //     System.out.println("    ID: " + u.getId() + "  |  Name: " + u.getName());
+    // }
 
-    for (User u : userService.getUsersByRole(role)) {
-        System.out.println("    ID: " + u.getId() + "  |  Name: " + u.getName());
-    }
-
+    System.out.println();
     int id = InputValidator.readInt("  Enter your User ID: ");
     String password = InputValidator.readPassword("  Enter your Password: ");
-
+    System.out.println();
     User user = userService.login(id, password);
 
     if (user == null) {

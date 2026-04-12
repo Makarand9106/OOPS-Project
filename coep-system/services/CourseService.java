@@ -114,8 +114,9 @@ public class CourseService {
     }
 
     public void printAllCourses() {
-        System.out.println("\n  ── All Courses ────────────────────────────────");
+        System.out.println("\n  ─────────────────────────── All Courses ───────────────────────────");
         if (courses.isEmpty()) { System.out.println("  No courses found."); return; }
+        System.out.println("  " + "─".repeat(68));
         System.out.printf("  %-8s %-35s %-12s %-8s%n", "ID", "Course Name", "Department", "Credits");
         System.out.println("  " + "─".repeat(68));
         for (Course c : courses) {

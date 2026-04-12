@@ -2,9 +2,8 @@ package services;
 
 import courses.Assignment;
 import courses.Submission;
-import utils.CSVHandler;
-
 import java.util.*;
+import utils.CSVHandler;
 
 /**
  * Service for assignments and submissions. Generics: List<Assignment>, List<Submission>.
@@ -111,12 +110,12 @@ public class AssignmentService {
         // Prevent duplicate submissions
         for (Submission s : submissions) {
             if (s.getAssignmentId().equals(assignmentId) && s.getStudentId() == studentId) {
-                System.out.println("  [!] Already submitted for this assignment.");
+                System.out.println("  Already submitted for this assignment.");
                 return false;
             }
         }
         if (findAssignmentById(assignmentId).isEmpty()) {
-            System.out.println("  [!] Assignment not found: " + assignmentId);
+            System.out.println("  Assignment not found: " + assignmentId);
             return false;
         }
         int n = submissions.size() + 1;
