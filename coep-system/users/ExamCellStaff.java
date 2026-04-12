@@ -18,6 +18,7 @@ public class ExamCellStaff extends User {
         System.out.println("  3. Upload Marks / Enter Results");
         System.out.println("  4. Publish Results");
         System.out.println("  5. View All Results");
+        System.out.println("  6. Change Password");
         System.out.println("  0. Logout");
     }
 }

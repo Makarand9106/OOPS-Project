@@ -13,12 +13,13 @@ public class Teacher extends User {
     public void viewDashboard() {
         printHeader("TEACHER DASHBOARD");
         System.out.println("\n  Available Actions:");
-        System.out.println("  1. Create Course");
+        System.out.println("  1. Create Course (Dept auto-set)");
         System.out.println("  2. Upload Study Material (Simulation)");
         System.out.println("  3. Create Assignment");
         System.out.println("  4. Grade Assignment Submissions");
-        System.out.println("  5. Create Quiz (In-Memory)");
-        System.out.println("  6. View Courses");
+        System.out.println("  5. Create Quiz");
+        System.out.println("  6. View My Courses");
+        System.out.println("  7. Change Password");
         System.out.println("  0. Logout");
     }
 }

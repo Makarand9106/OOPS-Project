@@ -1,0 +1,2 @@
+quizId,title,courseId,teacherId,timeLimitMinutes,maxAttempts
+Q001,DSA Quiz !,C110,22,90,1

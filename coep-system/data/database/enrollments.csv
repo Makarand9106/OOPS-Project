@@ -1,2 +1,4 @@
 enrollmentId,studentId,courseId,enrollmentDate
 E001,1,C101,2026-04-12
+E002,1,C105,2026-04-12
+E003,1,C110,2026-04-12
