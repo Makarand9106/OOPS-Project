@@ -302,7 +302,8 @@ public class TeacherDashboard extends JPanel {
         GridBagConstraints gc = formGc();
 
         JTextField titleField = new JTextField(16); styleTextField(titleField, "Assignment Title");
-        JTextField dueField   = new JTextField(16); styleTextField(dueField, "YYYY-MM-DD");
+        JTextField dueField   = new JTextField(LocalDate.now().plusDays(7).toString(), 16);
+        styleTextField(dueField, "YYYY-MM-DD");
         JSpinner   marksSpinner = new JSpinner(new SpinnerNumberModel(100, 1, 500, 5));
         marksSpinner.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 

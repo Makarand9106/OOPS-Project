@@ -30,6 +30,15 @@ public class AdminDashboard extends JPanel {
     private static final String DEFAULT_PASS_ADMIN     = "Admin@coeptech";
     private static final String DEFAULT_PASS_EXAM_CELL = "examcell@coep";
 
+    private static final List<String> DEFAULT_ACADEMIC_DEPARTMENTS = Arrays.asList(
+            "Computer Engineering",
+            "Electrical Engineering",
+            "Information Technology",
+            "Electronics Engineering",
+            "Mechanical Engineering",
+            "Civil Engineering"
+    );
+
     private final MainFrame     frame;
     private final Admin         admin;
     private final UserService   userService;
@@ -679,13 +688,17 @@ public class AdminDashboard extends JPanel {
     private List<String> getAllDepartments() {
         Set<String> depts = new TreeSet<>();
         for (User u : userService.getAllUsers()) {
-            if (u.getDepartment() != null && !u.getDepartment().isEmpty()) {
-                depts.add(u.getDepartment());
+            if (u.getDepartment() == null || u.getDepartment().isEmpty()) {
+                continue;
             }
+            String role = u.getRole();
+            if ("ADMIN".equals(role) || "EXAM_CELL".equals(role)) {
+                continue; // ignore non-academic departments used only for staff roles
+            }
+            depts.add(u.getDepartment().trim());
         }
-        // Add default departments if none exist
         if (depts.isEmpty()) {
-            depts.addAll(Arrays.asList("CSE", "IT", "Electronics", "Mechanical", "Civil"));
+            depts.addAll(DEFAULT_ACADEMIC_DEPARTMENTS);
         }
         return new ArrayList<>(depts);
     }
