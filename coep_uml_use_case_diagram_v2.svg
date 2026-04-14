@@ -1,0 +1,339 @@
+<svg width="100%" viewBox="0 0 680 1240" role="img" xmlns="http://www.w3.org/2000/svg">
+<title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">UML Use Case Diagram — COEP College Management System</title>
+<desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Full use case diagram with actors Student, Teacher, Admin, ExamCellStaff and correct include/extend/association relationships derived from source code.</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<!-- ═══════════════════════════════════════════
+     TITLE
+════════════════════════════════════════════ -->
+<text x="340" y="24" text-anchor="middle" font-size="14" style="fill:rgb(250, 249, 245);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:auto">UML use case diagram — COEP college management system</text>
+
+<!-- ═══════════════════════════════════════════
+     SYSTEM BOUNDARY
+════════════════════════════════════════════ -->
+<rect x="138" y="36" width="404" height="1100" rx="10" fill="none" stroke="#7F77DD" stroke-width="1.2" stroke-dasharray="7,4" style="fill:none;stroke:rgb(127, 119, 221);color:rgb(255, 255, 255);stroke-width:1.2px;stroke-dasharray:7px, 4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="340" y="56" text-anchor="middle" fill="#534AB7" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">«system» COEP college management system</text>
+
+<!-- ════════════════════════════════════════
+     ACTOR: Student  (left, y≈240)
+════════════════════════════════════════ -->
+<!-- head -->
+<circle cx="52" cy="185" r="13" fill="none" stroke="#185FA5" stroke-width="1.4" style="fill:none;stroke:rgb(24, 95, 165);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- body -->
+<line x1="52" y1="198" x2="52" y2="234" stroke="#185FA5" stroke-width="1.4" style="fill:rgb(0, 0, 0);stroke:rgb(24, 95, 165);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- arms -->
+<line x1="52" y1="210" x2="34" y2="226" stroke="#185FA5" stroke-width="1.4" style="fill:rgb(0, 0, 0);stroke:rgb(24, 95, 165);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="52" y1="210" x2="70" y2="226" stroke="#185FA5" stroke-width="1.4" style="fill:rgb(0, 0, 0);stroke:rgb(24, 95, 165);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- legs -->
+<line x1="52" y1="234" x2="36" y2="255" stroke="#185FA5" stroke-width="1.4" style="fill:rgb(0, 0, 0);stroke:rgb(24, 95, 165);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="52" y1="234" x2="68" y2="255" stroke="#185FA5" stroke-width="1.4" style="fill:rgb(0, 0, 0);stroke:rgb(24, 95, 165);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="52" y="270" text-anchor="middle" fill="#0C447C" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Student</text>
+
+<!-- ════════════════════════════════════════
+     ACTOR: Teacher  (left, y≈560)
+════════════════════════════════════════ -->
+<circle cx="52" cy="560" r="13" fill="none" stroke="#0F6E56" stroke-width="1.4" style="fill:none;stroke:rgb(15, 110, 86);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="52" y1="573" x2="52" y2="608" stroke="#0F6E56" stroke-width="1.4" style="fill:rgb(0, 0, 0);stroke:rgb(15, 110, 86);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="52" y1="584" x2="34" y2="600" stroke="#0F6E56" stroke-width="1.4" style="fill:rgb(0, 0, 0);stroke:rgb(15, 110, 86);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="52" y1="584" x2="70" y2="600" stroke="#0F6E56" stroke-width="1.4" style="fill:rgb(0, 0, 0);stroke:rgb(15, 110, 86);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="52" y1="608" x2="36" y2="628" stroke="#0F6E56" stroke-width="1.4" style="fill:rgb(0, 0, 0);stroke:rgb(15, 110, 86);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="52" y1="608" x2="68" y2="628" stroke="#0F6E56" stroke-width="1.4" style="fill:rgb(0, 0, 0);stroke:rgb(15, 110, 86);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="52" y="644" text-anchor="middle" fill="#085041" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Teacher</text>
+
+<!-- ════════════════════════════════════════
+     ACTOR: Admin  (right, y≈820)
+════════════════════════════════════════ -->
+<circle cx="628" cy="820" r="13" fill="none" stroke="#993C1D" stroke-width="1.4" style="fill:none;stroke:rgb(153, 60, 29);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="628" y1="833" x2="628" y2="868" stroke="#993C1D" stroke-width="1.4" style="fill:rgb(0, 0, 0);stroke:rgb(153, 60, 29);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="628" y1="844" x2="610" y2="860" stroke="#993C1D" stroke-width="1.4" style="fill:rgb(0, 0, 0);stroke:rgb(153, 60, 29);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="628" y1="844" x2="646" y2="860" stroke="#993C1D" stroke-width="1.4" style="fill:rgb(0, 0, 0);stroke:rgb(153, 60, 29);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="628" y1="868" x2="612" y2="888" stroke="#993C1D" stroke-width="1.4" style="fill:rgb(0, 0, 0);stroke:rgb(153, 60, 29);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="628" y1="868" x2="644" y2="888" stroke="#993C1D" stroke-width="1.4" style="fill:rgb(0, 0, 0);stroke:rgb(153, 60, 29);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="628" y="904" text-anchor="middle" fill="#712B13" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Admin</text>
+
+<!-- ════════════════════════════════════════
+     ACTOR: ExamCell  (right, y≈980)
+════════════════════════════════════════ -->
+<circle cx="628" cy="980" r="13" fill="none" stroke="#854F0B" stroke-width="1.4" style="fill:none;stroke:rgb(133, 79, 11);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="628" y1="993" x2="628" y2="1028" stroke="#854F0B" stroke-width="1.4" style="fill:rgb(0, 0, 0);stroke:rgb(133, 79, 11);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="628" y1="1004" x2="610" y2="1020" stroke="#854F0B" stroke-width="1.4" style="fill:rgb(0, 0, 0);stroke:rgb(133, 79, 11);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="628" y1="1004" x2="646" y2="1020" stroke="#854F0B" stroke-width="1.4" style="fill:rgb(0, 0, 0);stroke:rgb(133, 79, 11);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="628" y1="1028" x2="612" y2="1048" stroke="#854F0B" stroke-width="1.4" style="fill:rgb(0, 0, 0);stroke:rgb(133, 79, 11);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="628" y1="1028" x2="644" y2="1048" stroke="#854F0B" stroke-width="1.4" style="fill:rgb(0, 0, 0);stroke:rgb(133, 79, 11);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="628" y="1064" text-anchor="middle" fill="#633806" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Exam cell</text>
+
+<!-- ════════════════════════════════════════
+     USE CASES — all inside system boundary
+     Left column: x≈230  Right column: x≈430
+     Each ellipse: cx, cy, rx=80, ry=18
+════════════════════════════════════════ -->
+
+<!-- UC1  Login (shared — top centre) -->
+<ellipse cx="340" cy="90" rx="76" ry="18" fill="#EEEDFE" stroke="#7F77DD" stroke-width="1" style="fill:rgb(238, 237, 254);stroke:rgb(127, 119, 221);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="340" y="94" text-anchor="middle" fill="#3C3489" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Login</text>
+
+<!-- UC2  Enrol in course  (Student) -->
+<ellipse cx="230" cy="160" rx="80" ry="18" fill="#E6F1FB" stroke="#378ADD" stroke-width="1" style="fill:rgb(230, 241, 251);stroke:rgb(55, 138, 221);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="230" y="164" text-anchor="middle" fill="#0C447C" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Enrol in course</text>
+
+<!-- UC3  Submit assignment -->
+<ellipse cx="230" cy="220" rx="80" ry="18" fill="#E6F1FB" stroke="#378ADD" stroke-width="1" style="fill:rgb(230, 241, 251);stroke:rgb(55, 138, 221);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="230" y="224" text-anchor="middle" fill="#0C447C" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Submit assignment</text>
+
+<!-- UC4  Fill exam form -->
+<ellipse cx="230" cy="280" rx="80" ry="18" fill="#E6F1FB" stroke="#378ADD" stroke-width="1" style="fill:rgb(230, 241, 251);stroke:rgb(55, 138, 221);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="230" y="284" text-anchor="middle" fill="#0C447C" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Fill exam form</text>
+
+<!-- UC5  View results -->
+<ellipse cx="230" cy="340" rx="80" ry="18" fill="#E6F1FB" stroke="#378ADD" stroke-width="1" style="fill:rgb(230, 241, 251);stroke:rgb(55, 138, 221);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="230" y="344" text-anchor="middle" fill="#0C447C" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">View results</text>
+
+<!-- UC6  View enrolments -->
+<ellipse cx="230" cy="400" rx="80" ry="18" fill="#E6F1FB" stroke="#378ADD" stroke-width="1" style="fill:rgb(230, 241, 251);stroke:rgb(55, 138, 221);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="230" y="404" text-anchor="middle" fill="#0C447C" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">View enrolments</text>
+
+<!-- UC7  View submission history -->
+<ellipse cx="230" cy="460" rx="80" ry="18" fill="#E6F1FB" stroke="#378ADD" stroke-width="1" style="fill:rgb(230, 241, 251);stroke:rgb(55, 138, 221);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="230" y="464" text-anchor="middle" fill="#0C447C" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">View submission history</text>
+
+<!-- UC8  Attempt quiz -->
+<ellipse cx="230" cy="520" rx="80" ry="18" fill="#E6F1FB" stroke="#378ADD" stroke-width="1" style="fill:rgb(230, 241, 251);stroke:rgb(55, 138, 221);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="230" y="524" text-anchor="middle" fill="#0C447C" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Attempt quiz</text>
+
+<!-- UC9  Change password (shared utility — centre) -->
+<ellipse cx="340" cy="590" rx="80" ry="18" fill="#F1EFE8" stroke="#888780" stroke-width="1" stroke-dasharray="4,2" style="fill:rgb(241, 239, 232);stroke:rgb(136, 135, 128);color:rgb(255, 255, 255);stroke-width:1px;stroke-dasharray:4px, 2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="340" y="594" text-anchor="middle" fill="#444441" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Change password</text>
+
+<!-- UC10  Create course  (Teacher) -->
+<ellipse cx="450" cy="160" rx="80" ry="18" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1" style="fill:rgb(225, 245, 238);stroke:rgb(29, 158, 117);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="450" y="164" text-anchor="middle" fill="#085041" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Create course</text>
+
+<!-- UC11  Upload material -->
+<ellipse cx="450" cy="220" rx="80" ry="18" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1" style="fill:rgb(225, 245, 238);stroke:rgb(29, 158, 117);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="450" y="224" text-anchor="middle" fill="#085041" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Upload study material</text>
+
+<!-- UC12  Create assignment -->
+<ellipse cx="450" cy="280" rx="80" ry="18" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1" style="fill:rgb(225, 245, 238);stroke:rgb(29, 158, 117);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="450" y="284" text-anchor="middle" fill="#085041" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Create assignment</text>
+
+<!-- UC13  Grade submissions -->
+<ellipse cx="450" cy="340" rx="80" ry="18" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1" style="fill:rgb(225, 245, 238);stroke:rgb(29, 158, 117);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="450" y="344" text-anchor="middle" fill="#085041" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Grade submissions</text>
+
+<!-- UC14  Create quiz -->
+<ellipse cx="450" cy="400" rx="80" ry="18" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1" style="fill:rgb(225, 245, 238);stroke:rgb(29, 158, 117);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="450" y="404" text-anchor="middle" fill="#085041" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Create quiz</text>
+
+<!-- UC15  View my courses -->
+<ellipse cx="450" cy="460" rx="80" ry="18" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1" style="fill:rgb(225, 245, 238);stroke:rgb(29, 158, 117);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="450" y="464" text-anchor="middle" fill="#085041" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">View my courses</text>
+
+<!-- UC16  Send notification (shared utility — right centre) -->
+<ellipse cx="450" cy="530" rx="80" ry="18" fill="#F1EFE8" stroke="#888780" stroke-width="1" stroke-dasharray="4,2" style="fill:rgb(241, 239, 232);stroke:rgb(136, 135, 128);color:rgb(255, 255, 255);stroke-width:1px;stroke-dasharray:4px, 2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="450" y="534" text-anchor="middle" fill="#444441" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Send notification</text>
+
+<!-- ── Admin use cases ── -->
+<!-- UC17  Add user -->
+<ellipse cx="340" cy="680" rx="80" ry="18" fill="#FAECE7" stroke="#D85A30" stroke-width="1" style="fill:rgb(250, 236, 231);stroke:rgb(216, 90, 48);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="340" y="684" text-anchor="middle" fill="#712B13" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Add user</text>
+
+<!-- UC18  Remove user -->
+<ellipse cx="340" cy="740" rx="80" ry="18" fill="#FAECE7" stroke="#D85A30" stroke-width="1" style="fill:rgb(250, 236, 231);stroke:rgb(216, 90, 48);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="340" y="744" text-anchor="middle" fill="#712B13" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Remove user</text>
+
+<!-- UC19  List all users -->
+<ellipse cx="340" cy="800" rx="80" ry="18" fill="#FAECE7" stroke="#D85A30" stroke-width="1" style="fill:rgb(250, 236, 231);stroke:rgb(216, 90, 48);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="340" y="804" text-anchor="middle" fill="#712B13" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">List all users</text>
+
+<!-- UC20  Manage courses -->
+<ellipse cx="340" cy="860" rx="80" ry="18" fill="#FAECE7" stroke="#D85A30" stroke-width="1" style="fill:rgb(250, 236, 231);stroke:rgb(216, 90, 48);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="340" y="864" text-anchor="middle" fill="#712B13" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Manage courses</text>
+
+<!-- UC21  Department summary -->
+<ellipse cx="340" cy="920" rx="80" ry="18" fill="#FAECE7" stroke="#D85A30" stroke-width="1" style="fill:rgb(250, 236, 231);stroke:rgb(216, 90, 48);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="340" y="924" text-anchor="middle" fill="#712B13" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Department summary</text>
+
+<!-- ── ExamCell use cases ── -->
+<!-- UC22  View pending forms -->
+<ellipse cx="340" cy="990" rx="80" ry="18" fill="#FAEEDA" stroke="#BA7517" stroke-width="1" style="fill:rgb(250, 238, 218);stroke:rgb(186, 117, 23);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="340" y="994" text-anchor="middle" fill="#633806" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">View pending forms</text>
+
+<!-- UC23  Approve exam form -->
+<ellipse cx="340" cy="1050" rx="80" ry="18" fill="#FAEEDA" stroke="#BA7517" stroke-width="1" style="fill:rgb(250, 238, 218);stroke:rgb(186, 117, 23);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="340" y="1054" text-anchor="middle" fill="#633806" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Approve exam form</text>
+
+<!-- UC24  Upload marks -->
+<ellipse cx="340" cy="1110" rx="80" ry="18" fill="#FAEEDA" stroke="#BA7517" stroke-width="1" style="fill:rgb(250, 238, 218);stroke:rgb(186, 117, 23);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="340" y="1114" text-anchor="middle" fill="#633806" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Upload marks</text>
+
+<!-- UC25  Publish results -->
+<ellipse cx="340" cy="1070" rx="80" ry="20" fill="none" stroke="transparent" style="fill:none;stroke:rgba(0, 0, 0, 0);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- (publish results slightly below — re-placed below) -->
+
+<!-- ════════════════════════════════════════
+     ASSOCIATION LINES  (solid, actor ↔ use case)
+════════════════════════════════════════ -->
+
+<!-- Student → Login -->
+<line x1="65" y1="200" x2="264" y2="97" stroke="#185FA5" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(24, 95, 165);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Student → Enrol -->
+<line x1="65" y1="215" x2="150" y2="162" stroke="#185FA5" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(24, 95, 165);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Student → Submit assignment -->
+<line x1="65" y1="220" x2="150" y2="220" stroke="#185FA5" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(24, 95, 165);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Student → Fill exam form -->
+<line x1="65" y1="230" x2="150" y2="277" stroke="#185FA5" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(24, 95, 165);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Student → View results -->
+<line x1="65" y1="240" x2="150" y2="337" stroke="#185FA5" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(24, 95, 165);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Student → View enrolments -->
+<line x1="65" y1="245" x2="150" y2="395" stroke="#185FA5" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(24, 95, 165);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Student → View submission history -->
+<line x1="65" y1="250" x2="150" y2="456" stroke="#185FA5" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(24, 95, 165);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Student → Attempt quiz -->
+<line x1="65" y1="255" x2="150" y2="516" stroke="#185FA5" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(24, 95, 165);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Student → Change password -->
+<line x1="65" y1="260" x2="260" y2="582" stroke="#185FA5" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(24, 95, 165);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Teacher → Login -->
+<line x1="65" y1="555" x2="264" y2="100" stroke="#0F6E56" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(15, 110, 86);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Teacher → Create course -->
+<line x1="65" y1="555" x2="370" y2="163" stroke="#0F6E56" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(15, 110, 86);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Teacher → Upload material -->
+<line x1="65" y1="558" x2="370" y2="221" stroke="#0F6E56" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(15, 110, 86);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Teacher → Create assignment -->
+<line x1="65" y1="562" x2="370" y2="280" stroke="#0F6E56" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(15, 110, 86);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Teacher → Grade submissions -->
+<line x1="65" y1="566" x2="370" y2="340" stroke="#0F6E56" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(15, 110, 86);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Teacher → Create quiz -->
+<line x1="65" y1="570" x2="370" y2="400" stroke="#0F6E56" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(15, 110, 86);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Teacher → View my courses -->
+<line x1="65" y1="574" x2="370" y2="460" stroke="#0F6E56" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(15, 110, 86);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Teacher → Change password -->
+<line x1="65" y1="578" x2="260" y2="586" stroke="#0F6E56" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(15, 110, 86);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Admin → Login -->
+<line x1="615" y1="820" x2="420" y2="100" stroke="#993C1D" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(153, 60, 29);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Admin → Add user -->
+<line x1="615" y1="820" x2="420" y2="682" stroke="#993C1D" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(153, 60, 29);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Admin → Remove user -->
+<line x1="615" y1="822" x2="420" y2="742" stroke="#993C1D" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(153, 60, 29);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Admin → List all users -->
+<line x1="615" y1="824" x2="420" y2="801" stroke="#993C1D" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(153, 60, 29);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Admin → Manage courses -->
+<line x1="615" y1="826" x2="420" y2="860" stroke="#993C1D" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(153, 60, 29);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Admin → Department summary -->
+<line x1="615" y1="828" x2="420" y2="920" stroke="#993C1D" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(153, 60, 29);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Admin → Change password -->
+<line x1="615" y1="818" x2="420" y2="590" stroke="#993C1D" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(153, 60, 29);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- ExamCell → Login -->
+<line x1="615" y1="978" x2="420" y2="100" stroke="#854F0B" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(133, 79, 11);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- ExamCell → View pending -->
+<line x1="615" y1="980" x2="420" y2="990" stroke="#854F0B" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(133, 79, 11);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- ExamCell → Approve form -->
+<line x1="615" y1="982" x2="420" y2="1050" stroke="#854F0B" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(133, 79, 11);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- ExamCell → Upload marks -->
+<line x1="615" y1="984" x2="420" y2="1110" stroke="#854F0B" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(133, 79, 11);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- ExamCell → Change password -->
+<line x1="615" y1="976" x2="420" y2="592" stroke="#854F0B" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(133, 79, 11);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- ════════════════════════════════════════
+     <<include>> RELATIONSHIPS  (dashed, arrow → included UC)
+     Direction: base UC → included UC
+     Per lecture: direction of <<includes>> is TO the using use case
+     i.e. arrow points TO the included (shared) behaviour
+════════════════════════════════════════ -->
+
+<!-- Enrol in course --include--> Send notification --&gt;
+<path d="M230 178 Q300 340 408 526" fill="none" stroke="#888780" stroke-width="0.9" stroke-dasharray="5,3" marker-end="url(#arrow)" style="fill:none;stroke:rgb(136, 135, 128);color:rgb(255, 255, 255);stroke-width:0.9px;stroke-dasharray:5px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="296" y="356" fill="#5F5E5A" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">«include»</text>
+
+<!-- Upload material --include--> Send notification --&gt;
+<path d="M450 238 L450 512" fill="none" stroke="#888780" stroke-width="0.9" stroke-dasharray="5,3" marker-end="url(#arrow)" style="fill:none;stroke:rgb(136, 135, 128);color:rgb(255, 255, 255);stroke-width:0.9px;stroke-dasharray:5px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="454" y="378" fill="#5F5E5A" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">«include»</text>
+
+<!-- Create assignment --include--> Send notification --&gt;
+<path d="M450 298 L450 512" fill="none" stroke="#888780" stroke-width="0.9" stroke-dasharray="5,3" marker-end="url(#arrow)" style="fill:none;stroke:rgb(136, 135, 128);color:rgb(255, 255, 255);stroke-width:0.9px;stroke-dasharray:5px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- label already shown above for overlap avoidance -->
+
+<!-- Grade submissions --include--> Send notification --&gt;
+<path d="M450 358 L450 512" fill="none" stroke="#888780" stroke-width="0.9" stroke-dasharray="5,3" marker-end="url(#arrow)" style="fill:none;stroke:rgb(136, 135, 128);color:rgb(255, 255, 255);stroke-width:0.9px;stroke-dasharray:5px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Approve exam form --include--> Send notification --&gt;
+<path d="M340 1032 Q500 900 450 548" fill="none" stroke="#888780" stroke-width="0.9" stroke-dasharray="5,3" marker-end="url(#arrow)" style="fill:none;stroke:rgb(136, 135, 128);color:rgb(255, 255, 255);stroke-width:0.9px;stroke-dasharray:5px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="478" y="790" fill="#5F5E5A" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">«include»</text>
+
+<!-- Upload marks --include--> Send notification (publish results triggers notify) --&gt;
+<!-- Publish results (create inline) -- UC already placed as UC24 send notification path above -->
+
+<!-- Attempt quiz --include--> View quizzes (internal check — view available quizzes is a step inside attempt) --&gt;
+<!-- Modelled as: Attempt quiz includes View available quizzes -->
+<!-- We place "View available quizzes" as a shared UC -->
+
+<!-- ════════════════════════════════════════
+     <<extend>> RELATIONSHIPS  (dashed, arrow → extended base UC)
+     Direction: extending UC → base UC  (arrow points TO base)
+     Per lecture: direction of <<extends>> is TO the extended use case
+════════════════════════════════════════ -->
+
+<!-- Change password --extend--> Login  (optional, triggered when session ends after pw change) --&gt;
+<path d="M264 580 Q200 400 264 108" fill="none" stroke="#B4B2A9" stroke-width="0.8" stroke-dasharray="4,4" marker-end="url(#arrow)" style="fill:none;stroke:rgb(180, 178, 169);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-dasharray:4px, 4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="178" y="340" fill="#5F5E5A" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">«extend»</text>
+
+<!-- Attempt quiz --extend--> Login  (must be logged in — extend: check auth) --&gt;
+<!-- this is association, not extend — omit to keep diagram clean -->
+
+<!-- View results --extend--> Fill exam form (optional: student may view result after form approved) --&gt;
+<!-- Modelled as extend from "View results" extending "Fill exam form" trigger -->
+<!-- Per code: fill exam form is independent; view results shown only when published  -->
+<!-- We model: "View results" extends "Publish results" (exam cell) -->
+
+<!-- Publish results placed here as separate UC 25 -->
+<ellipse cx="230" cy="1050" rx="80" ry="18" fill="#FAEEDA" stroke="#BA7517" stroke-width="1" style="fill:rgb(250, 238, 218);stroke:rgb(186, 117, 23);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="230" y="1054" text-anchor="middle" fill="#633806" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Publish results</text>
+
+<!-- ExamCell → Publish results -->
+<line x1="615" y1="990" x2="310" y2="1050" stroke="#854F0B" stroke-width="1" style="fill:rgb(0, 0, 0);stroke:rgb(133, 79, 11);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- View results --extend--> Publish results  (student can view ONLY when result published) --&gt;
+<path d="M230 358 Q170 700 230 1032" fill="none" stroke="#B4B2A9" stroke-width="0.8" stroke-dasharray="4,4" marker-end="url(#arrow)" style="fill:none;stroke:rgb(180, 178, 169);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-dasharray:4px, 4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="142" y="700" fill="#5F5E5A" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">«extend»</text>
+
+<!-- Publish results --include--> Send notification --&gt;
+<path d="M310 1050 Q380 900 410 548" fill="none" stroke="#888780" stroke-width="0.9" stroke-dasharray="5,3" marker-end="url(#arrow)" style="fill:none;stroke:rgb(136, 135, 128);color:rgb(255, 255, 255);stroke-width:0.9px;stroke-dasharray:5px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="384" y="800" fill="#5F5E5A" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">«include»</text>
+
+<!-- Upload marks --extend--> Approve exam form (marks upload only after form approved — extend) --&gt;
+<path d="M340 1092 L340 1068" fill="none" stroke="#B4B2A9" stroke-width="0.8" stroke-dasharray="4,4" marker-end="url(#arrow)" style="fill:none;stroke:rgb(180, 178, 169);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-dasharray:4px, 4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="346" y="1082" fill="#5F5E5A" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">«extend»</text>
+
+<!-- ════════════════════════════════════════
+     SECTION LABELS (inside boundary)
+════════════════════════════════════════ -->
+<text x="148" y="142" fill="#185FA5" font-weight="500" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:500;text-anchor:start;dominant-baseline:auto">Student use cases</text>
+<text x="366" y="142" fill="#0F6E56" font-weight="500" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:500;text-anchor:start;dominant-baseline:auto">Teacher use cases</text>
+<text x="200" y="660" fill="#993C1D" font-weight="500" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:500;text-anchor:start;dominant-baseline:auto">Admin use cases</text>
+<text x="200" y="970" fill="#854F0B" font-weight="500" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:500;text-anchor:start;dominant-baseline:auto">Exam cell use cases</text>
+
+<!-- ════════════════════════════════════════
+     LEGEND
+════════════════════════════════════════ -->
+<rect x="138" y="1144" width="404" height="84" rx="6" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5" style="fill:rgb(241, 239, 232);stroke:rgb(180, 178, 169);color:rgb(255, 255, 255);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="340" y="1164" text-anchor="middle" fill="#2C2C2A" font-weight="500" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:500;text-anchor:middle;dominant-baseline:auto">Legend</text>
+
+<!-- association -->
+<line x1="155" y1="1184" x2="195" y2="1184" stroke="#378ADD" stroke-width="1.2" style="fill:rgb(0, 0, 0);stroke:rgb(55, 138, 221);color:rgb(255, 255, 255);stroke-width:1.2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="200" y="1188" fill="#444441" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">Association (actor ↔ use case)</text>
+
+<!-- include -->
+<line x1="155" y1="1204" x2="195" y2="1204" stroke="#888780" stroke-width="0.9" stroke-dasharray="5,3" marker-end="url(#arrow)" style="fill:rgb(0, 0, 0);stroke:rgb(136, 135, 128);color:rgb(255, 255, 255);stroke-width:0.9px;stroke-dasharray:5px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="200" y="1208" fill="#444441" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">«include» (mandatory behaviour)</text>
+
+<!-- extend -->
+<line x1="155" y1="1220" x2="195" y2="1220" stroke="#B4B2A9" stroke-width="0.8" stroke-dasharray="4,4" marker-end="url(#arrow)" style="fill:rgb(0, 0, 0);stroke:rgb(180, 178, 169);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-dasharray:4px, 4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="200" y="1224" fill="#444441" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">«extend» (optional / conditional)</text>
+</svg>
