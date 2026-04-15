@@ -229,6 +229,27 @@ public class StudentDashboard extends JPanel {
         for (Course c : deptCourses) {
             model.addRow(new Object[]{c.getCourseId(), c.getCourseName(), c.getCredits()});
         }
+
+        JButton refreshBtn = makeButton("Refresh", COEP_BLUE, Color.WHITE);
+        refreshBtn.setPreferredSize(new Dimension(100, 32));
+        refreshBtn.addActionListener(e -> {
+            model.setRowCount(0);
+            List<Course> refreshed = courseService.getCoursesByDepartment(student.getDepartment());
+            for (Course c : refreshed) {
+                model.addRow(new Object[]{c.getCourseId(), c.getCourseName(), c.getCredits()});
+            }
+            if (refreshed.isEmpty()) {
+                JOptionPane.showMessageDialog(frame,
+                        "No courses available for your department.",
+                        "No Courses", JOptionPane.INFORMATION_MESSAGE);
+            }
+        });
+
+        JPanel topRow = rowPanel();
+        topRow.add(refreshBtn);
+        p.add(topRow);
+        p.add(Box.createVerticalStrut(8));
+
         if (deptCourses.isEmpty()) {
             JLabel empty = makeLabel("No courses available for your department.",
                     new Font("Segoe UI", Font.ITALIC, 13), new Color(0x778899));
@@ -306,6 +327,17 @@ public class StudentDashboard extends JPanel {
         styleCombo(courseCombo);
         courseCombo.setPreferredSize(new Dimension(160, 34));
 
+        JButton refreshBtn = makeButton("Refresh", COEP_BLUE, Color.WHITE);
+        refreshBtn.setPreferredSize(new Dimension(100, 32));
+        refreshBtn.addActionListener(e -> {
+            refreshEnrolledCourseCombo(courseCombo);
+            if (courseCombo.getItemCount() == 0) {
+                JOptionPane.showMessageDialog(frame,
+                        "You are not enrolled in any courses yet.",
+                        "No Enrollments", JOptionPane.INFORMATION_MESSAGE);
+            }
+        });
+
         JButton loadBtn = makeButton("Load Assignments", COEP_BLUE, Color.WHITE);
         loadBtn.setPreferredSize(new Dimension(160, 34));
 
@@ -330,6 +362,8 @@ public class StudentDashboard extends JPanel {
         row1.add(courseCombo);
         row1.add(Box.createHorizontalStrut(10));
         row1.add(loadBtn);
+        row1.add(Box.createHorizontalStrut(10));
+        row1.add(refreshBtn);
         p.add(row1);
         p.add(Box.createVerticalStrut(10));
 
@@ -385,6 +419,25 @@ public class StudentDashboard extends JPanel {
 
         List<String[]> enrollments = courseService.getEnrollmentsByStudent(student.getId());
         String[] courseIds = enrollments.stream().map(e -> e[2]).toArray(String[]::new);
+        JComboBox<String> courseCombo = new JComboBox<>(courseIds);
+        styleCombo(courseCombo);
+        courseCombo.setPreferredSize(new Dimension(200, 34));
+
+        JButton refreshBtn = makeButton("Refresh", COEP_BLUE, Color.WHITE);
+        refreshBtn.setPreferredSize(new Dimension(100, 32));
+        refreshBtn.addActionListener(e -> {
+            refreshEnrolledCourseCombo(courseCombo);
+            if (courseCombo.getItemCount() == 0) {
+                JOptionPane.showMessageDialog(frame,
+                        "You are not enrolled in any courses yet.",
+                        "No Enrollments", JOptionPane.INFORMATION_MESSAGE);
+            }
+        });
+
+        JPanel topRow = rowPanel();
+        topRow.add(refreshBtn);
+        p.add(topRow);
+        p.add(Box.createVerticalStrut(8));
 
         JPanel form = new JPanel(new GridBagLayout());
         form.setBackground(Color.WHITE);
@@ -400,9 +453,6 @@ public class StudentDashboard extends JPanel {
         gc.gridx = 0; gc.gridy = 0;
         form.add(makeLabel("Course:", new Font("Segoe UI", Font.BOLD, 13), NAVY), gc);
         gc.gridx = 1;
-        JComboBox<String> courseCombo = new JComboBox<>(courseIds);
-        styleCombo(courseCombo);
-        courseCombo.setPreferredSize(new Dimension(200, 34));
         form.add(courseCombo, gc);
 
         gc.gridx = 0; gc.gridy = 1;
@@ -522,6 +572,14 @@ public class StudentDashboard extends JPanel {
         List<String[]> enr = courseService.getEnrollmentsByStudent(student.getId());
         for (String[] e : enr) {
             model.addRow(new Object[]{e[0], e[2], e[3]});
+        }
+    }
+
+    private void refreshEnrolledCourseCombo(JComboBox<String> combo) {
+        combo.removeAllItems();
+        List<String[]> enrollments = courseService.getEnrollmentsByStudent(student.getId());
+        for (String[] e : enrollments) {
+            combo.addItem(e[2]);
         }
     }
 
