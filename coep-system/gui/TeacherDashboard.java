@@ -291,12 +291,19 @@ public class TeacherDashboard extends JPanel {
     private JPanel buildCreateAssignPanel() {
         JPanel p = sectionPanel("📝  Create Assignment");
 
-        // My courses combo
-        List<Course> myCourses = courseService.getCoursesByTeacher(teacher.getId());
-        String[] cids = myCourses.stream().map(Course::getCourseId).toArray(String[]::new);
-        JComboBox<String> courseCombo = new JComboBox<>(cids);
+        JComboBox<String> courseCombo = new JComboBox<>();
         styleCombo(courseCombo);
         courseCombo.setPreferredSize(new Dimension(180, 34));
+        refreshCourseCombo(courseCombo);
+
+        JButton refreshBtn = makeButton("Refresh", COEP_BLUE, Color.WHITE);
+        refreshBtn.setPreferredSize(new Dimension(100, 32));
+        refreshBtn.addActionListener(e -> refreshCourseCombo(courseCombo));
+
+        JPanel topRow = rowPanel();
+        topRow.add(refreshBtn);
+        p.add(topRow);
+        p.add(Box.createVerticalStrut(8));
 
         JPanel form = cardForm();
         GridBagConstraints gc = formGc();
@@ -310,12 +317,7 @@ public class TeacherDashboard extends JPanel {
         gc.gridx = 0; gc.gridy = 0;
         form.add(makeLabel("Your Course:", new Font("Segoe UI", Font.BOLD, 13), NAVY), gc);
         gc.gridx = 1;
-        if (cids.length == 0) {
-            form.add(makeLabel("No courses — create a course first.",
-                    new Font("Segoe UI", Font.ITALIC, 13), new Color(0x778899)), gc);
-        } else {
-            form.add(courseCombo, gc);
-        }
+        form.add(courseCombo, gc);
 
         addFormRow(form, gc, 1, "Assignment Title:", titleField);
         addFormRow(form, gc, 2, "Due Date (YYYY-MM-DD):", dueField);
@@ -325,7 +327,7 @@ public class TeacherDashboard extends JPanel {
         JButton createBtn = makeButton("Create Assignment", COEP_BLUE, Color.WHITE);
         createBtn.setPreferredSize(new Dimension(170, 36));
         createBtn.addActionListener(e -> {
-            if (cids.length == 0) {
+            if (courseCombo.getItemCount() == 0 || !courseCombo.isEnabled()) {
                 JOptionPane.showMessageDialog(frame, "You have no courses. Create a course first.",
                         "No Courses", JOptionPane.WARNING_MESSAGE);
                 return;
@@ -357,6 +359,7 @@ public class TeacherDashboard extends JPanel {
             }
 
             // Ownership check (same as CLI TeacherController)
+            List<Course> myCourses = courseService.getCoursesByTeacher(teacher.getId());
             boolean owns = myCourses.stream().anyMatch(c -> c.getCourseId().equals(cid));
             if (!owns) {
                 JOptionPane.showMessageDialog(frame,
@@ -489,20 +492,41 @@ public class TeacherDashboard extends JPanel {
         }
     }
 
+    private void refreshCourseCombo(JComboBox<String> courseCombo) {
+        courseCombo.removeAllItems();
+        List<Course> myCourses = courseService.getCoursesByTeacher(teacher.getId());
+        if (myCourses.isEmpty()) {
+            courseCombo.addItem("No courses yet");
+            courseCombo.setEnabled(false);
+        } else {
+            for (Course c : myCourses) {
+                courseCombo.addItem(c.getCourseId());
+            }
+            courseCombo.setEnabled(true);
+        }
+    }
+
     // ── CREATE QUIZ ───────────────────────────────────────────────────────────
 
     private JPanel buildCreateQuizPanel() {
         JPanel p = sectionPanel("🧠  Create Quiz");
 
-        List<Course> myCourses = courseService.getCoursesByTeacher(teacher.getId());
-        String[] cids = myCourses.stream().map(Course::getCourseId).toArray(String[]::new);
-
-        JPanel    form        = cardForm();
-        GridBagConstraints gc = formGc();
-
-        JComboBox<String> courseCombo = new JComboBox<>(cids);
+        JComboBox<String> courseCombo = new JComboBox<>();
         styleCombo(courseCombo);
         courseCombo.setPreferredSize(new Dimension(180, 34));
+        refreshCourseCombo(courseCombo);
+
+        JButton refreshBtn = makeButton("Refresh", COEP_BLUE, Color.WHITE);
+        refreshBtn.setPreferredSize(new Dimension(100, 32));
+        refreshBtn.addActionListener(e -> refreshCourseCombo(courseCombo));
+
+        JPanel topRow = rowPanel();
+        topRow.add(refreshBtn);
+        p.add(topRow);
+        p.add(Box.createVerticalStrut(8));
+
+        JPanel form = cardForm();
+        GridBagConstraints gc = formGc();
 
         JTextField titleField = new JTextField(16); styleTextField(titleField, "Quiz Title");
         JSpinner   timeLimit  = new JSpinner(new SpinnerNumberModel(30, 5, 180, 5));
@@ -512,9 +536,7 @@ public class TeacherDashboard extends JPanel {
         gc.gridx = 0; gc.gridy = 0;
         form.add(makeLabel("Your Course:", new Font("Segoe UI", Font.BOLD, 13), NAVY), gc);
         gc.gridx = 1;
-        form.add(cids.length == 0
-                ? makeLabel("No courses yet.", new Font("Segoe UI", Font.ITALIC, 13), new Color(0x778899))
-                : courseCombo, gc);
+        form.add(courseCombo, gc);
 
         addFormRow(form, gc, 1, "Quiz Title:", titleField);
         addFormRow(form, gc, 2, "Time Limit (min):", timeLimit);
@@ -525,7 +547,7 @@ public class TeacherDashboard extends JPanel {
         JButton createBtn = makeButton("Create Quiz + Add Questions", COEP_BLUE, Color.WHITE);
         createBtn.setPreferredSize(new Dimension(240, 36));
         createBtn.addActionListener(e -> {
-            if (cids.length == 0) {
+            if (courseCombo.getItemCount() == 0 || !courseCombo.isEnabled()) {
                 JOptionPane.showMessageDialog(frame, "No courses assigned.", "No Courses", JOptionPane.WARNING_MESSAGE);
                 return;
             }
@@ -541,6 +563,7 @@ public class TeacherDashboard extends JPanel {
                 return;
             }
             // Ownership check
+            List<Course> myCourses = courseService.getCoursesByTeacher(teacher.getId());
             boolean owns = myCourses.stream().anyMatch(c -> c.getCourseId().equals(cid));
             if (!owns) {
                 JOptionPane.showMessageDialog(frame,
