@@ -49,6 +49,7 @@ echo "  Compiling Java source files..."
   "$SRC_DIR"/exams/*.java \
   "$SRC_DIR"/services/*.java \
   "$SRC_DIR"/controllers/*.java \
+  "$SRC_DIR"/gui/*.java \
   "$SRC_DIR"/main/*.java
 
 # echo "  [OK] Compilation successful!"

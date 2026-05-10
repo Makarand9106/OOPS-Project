@@ -1,25 +1,21 @@
 assignmentId,title,courseId,teacherId,dueDate,maxMarks
-
 A001,Linked List Implementation,C101,4,2026-04-20,20
 A002,Binary Trees,C101,4,2026-04-28,20
 A003,OOP Concepts Implementation,C102,4,2026-04-22,15
 A004,Process Scheduling,C103,4,2026-04-30,20
 A005,SQL Queries Practice,C104,4,2026-05-02,20
 A006,Network Protocol Analysis,C105,4,2026-05-05,20
-
 A007,Analog Circuit Design,E201,4,2026-04-21,15
 A008,Microprocessor Programming,E202,4,2026-04-25,20
 A009,Signal Transmission Study,E203,4,2026-05-01,15
 A010,Logic Gates Design,C204,5,2026-04-23,15
-
 A011,Thermodynamics Problems,M301,4,2026-04-26,20
 A012,Fluid Flow Analysis,M302,4,2026-04-29,20
 A013,Gear Design,M303,4,2026-05-03,20
-
 A014,Electrical Machine Analysis,EE401,4,2026-04-24,20
 A015,Power Distribution Study,EE402,4,2026-04-27,15
 A016,Control System Stability,EE403,4,2026-05-04,15
-
 A017,Beam Design,CE501,4,2026-04-26,20
 A018,Soil Testing,CE502,4,2026-04-30,20
 A019,Traffic Flow Analysis,CE503,4,2026-05-06,15
+A020,Tutorial 1,C106,21,2026-04-22,10

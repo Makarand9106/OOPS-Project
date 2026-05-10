@@ -1,5 +1,5 @@
 id,name,role,department,password
-1,Jaivardhan Malhotra,STUDENT,Computer Engineering,Jai@123
+1,Jaivardhan Malhotra,STUDENT,Computer Engineering,123345
 2,Parth Malangave,STUDENT,Electronics Engineering,123345
 3,Kaivalya Katdare,STUDENT,Computer Engineering,123345
 4,Makarand Kulkarni,STUDENT,Computer Engineering,123345
@@ -37,4 +37,13 @@ id,name,role,department,password
 36,Admin User,ADMIN,Administration,Admin@coeptech
 37,Exam Officer 1,EXAM_CELL,Examination,123456789
 38,Exam Officer 2,EXAM_CELL,Examination,123456789
-39,Krushn Gandhi,STUDENT,CSE,student@coep
+39,Uday Kale,STUDENT,Computer Engineering,123345
+40,Aarav Patil,STUDENT,Computer Engineering,123345
+41,Neha Sharma,STUDENT,Electrical Engineering,123345
+42,Rohan Deshmukh,STUDENT,Electronics and Telecommunication Engineering,123345
+43,Priya Kulkarni,STUDENT,Mechanical Engineering,123345
+44,Aditya Singh,STUDENT,Civil Engineering,123345
+45,Sneha Joshi,STUDENT,Manufacturing Engineering,123345
+46,Vikram Iyer,STUDENT,Instrumentation Engineering,123345
+47,Kavya Reddy,STUDENT,AIML,123345
+48,Kaivalya,STUDENT,Computer Engineering,student@coep

@@ -44,7 +44,6 @@ public class InputValidator {
         char[] passwordChars = console.readPassword(prompt);
         return new String(passwordChars);
     } else {
-        // fallback (IDE like IntelliJ doesn't support Console)
         System.out.print(prompt);
         return new java.util.Scanner(System.in).nextLine();
     }
